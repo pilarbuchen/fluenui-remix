@@ -23,9 +23,10 @@ import {
     useToastController,
     Spinner,
 } from '@fluentui/react-components';
+import styles from './my-fluent-ui-component.module.scss';
 
 const MyFluentComponent = () => {
-    const [selectedTab, setSelectedTab] = useState("home");
+    const [selectedTab, setSelectedTab] = useState('home');
     const [loading, setLoading] = useState(false);
     const toastController = useToastController();
 
@@ -41,7 +42,7 @@ const MyFluentComponent = () => {
                 <Toast>
                     <Text>Form submitted successfully!</Text>
                 </Toast>,
-                { position: "top-end" }
+                { position: 'top-end' }
             );
         }, 1000);
     };
@@ -61,17 +62,23 @@ const MyFluentComponent = () => {
             <div style={{ padding: '20px' }}>
                 {/* Header Section */}
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                    <Text size={800} weight="semibold">Welcome to Our Application</Text>
-                    <Text size={400} block>Explore the power of Fluent UI</Text>
+                    <Text size={800} weight="semibold" className={styles.text}>
+                        Welcome to Our Application
+                    </Text>
+                    <Text size={400} block>
+                        Explore the power of Fluent UI
+                    </Text>
                 </div>
 
                 {/* Cards Grid */}
-                <div style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-                    gap: '20px',
-                    marginBottom: '30px' 
-                }}>
+                <div
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '20px',
+                        marginBottom: '30px',
+                    }}
+                >
                     {/* Card 1 */}
                     <Card>
                         <CardHeader
@@ -79,7 +86,9 @@ const MyFluentComponent = () => {
                             description="Explore what we offer"
                         />
                         <div style={{ padding: '16px' }}>
-                            <Badge appearance="filled" color="brand">New</Badge>
+                            <Badge appearance="filled" color="brand">
+                                New
+                            </Badge>
                             <Text block style={{ marginTop: '10px' }}>
                                 Discover our latest features and improvements
                             </Text>
@@ -142,12 +151,14 @@ const MyFluentComponent = () => {
                 </Card>
 
                 {/* Footer */}
-                <footer style={{ 
-                    marginTop: '40px', 
-                    padding: '20px',
-                    textAlign: 'center',
-                    borderTop: '1px solid #eee'
-                }}>
+                <footer
+                    style={{
+                        marginTop: '40px',
+                        padding: '20px',
+                        textAlign: 'center',
+                        borderTop: '1px solid #eee',
+                    }}
+                >
                     <Text size={200}>© 2024 Your Application Name</Text>
                     <div style={{ marginTop: '10px' }}>
                         <Link style={{ marginRight: '20px' }}>Privacy Policy</Link>
